@@ -252,6 +252,14 @@ constantTag ciBytecodeStream::get_constant_pool_tag(int index) const {
 }
 
 // ------------------------------------------------------------------
+// ciBytecodeStream::get_raw_pool_tag
+//
+constantTag ciBytecodeStream::get_raw_pool_tag(int index) const {
+  VM_ENTRY_MARK;
+  return _method->get_Method()->constants()->tag_at(index);
+}
+
+// ------------------------------------------------------------------
 // ciBytecodeStream::get_field_index
 //
 // If this is a field access bytecode, get the constant pool
