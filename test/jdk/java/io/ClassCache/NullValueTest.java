@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2022, Red Hat, Inc. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
  * This code is free software; you can redistribute it and/or modify it
@@ -21,6 +21,22 @@
  * questions.
  */
 
-module m2 {
-    exports q.r;
+import java.io.NullClassCache;
+
+/**
+ * @test
+ * @bug 8280041
+ * @summary Test that ClassCache throws on trying to pass null value
+ * @compile/module=java.base java/io/NullClassCache.java
+ * @run main NullValueTest
+ */
+public class NullValueTest {
+    public static void main(String... args) throws Throwable {
+        try {
+            new NullClassCache().get(Object.class);
+            throw new IllegalStateException("Should have failed");
+        } catch (NullPointerException npe) {
+            // Expected
+        }
+    }
 }

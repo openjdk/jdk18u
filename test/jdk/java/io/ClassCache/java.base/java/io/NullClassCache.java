@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2022, Red Hat, Inc. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
  * This code is free software; you can redistribute it and/or modify it
@@ -21,6 +21,14 @@
  * questions.
  */
 
-module m2 {
-    exports q.r;
+package java.io;
+
+public class NullClassCache extends ClassCache<Object> {
+    protected Object computeValue(Class<?> cl) {
+        return null;
+    }
+
+    public Object get(Class<?> cl) {
+        return super.get(cl);
+    }
 }
