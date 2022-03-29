@@ -64,9 +64,9 @@
           " calculation.")                                              \
                                                                         \
   product(bool, PreferContainerQuotaForCPUCount, true,                  \
-          "Calculate the container CPU availability based"              \
-          " on the value of quotas (if set), when true. Otherwise, use" \
-          " the CPU shares value, provided it is less than quota.")     \
+          "Calculate the container CPU availability based on the value" \
+          " of quotas (if set), when true. Otherwise, use the CPU"      \
+          " shares value, provided it is less than quota.")             \
                                                                         \
   product(bool, AdjustStackSizeForTLS, false,                           \
           "Increase the thread stack size to include space for glibc "  \
