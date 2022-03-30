@@ -72,7 +72,7 @@ public abstract class TestConstantsInError implements OutputProcessor {
     static byte[] generateClassFile(String suffix, Generator g) throws IOException {
         var cw = new ClassWriter(COMPUTE_MAXS | COMPUTE_FRAMES);
         String name = TEST_PREFIX + "_" + suffix;
-        cw.visit(V19, ACC_PUBLIC | ACC_SUPER, name, null, "java/lang/Object", null);
+        cw.visit(V18, ACC_PUBLIC | ACC_SUPER, name, null, "java/lang/Object", null);
 
         {
             var mv = cw.visitMethod(ACC_PUBLIC | ACC_STATIC, "test", "()V", null, null);
