@@ -172,7 +172,7 @@ class RegisterSaver {
 // "0" is assigned for rax. Thus we need to ignore -Wnonnull.
 PRAGMA_DIAG_PUSH
 PRAGMA_NONNULL_IGNORED
-OopMap* RegisterSaver::save_live_registers(MacroAssembler* masm, int additional_frame_words, int* total_frame_words, bool save_wide_vectors) {{
+OopMap* RegisterSaver::save_live_registers(MacroAssembler* masm, int additional_frame_words, int* total_frame_words, bool save_wide_vectors) {
   int off = 0;
   int num_xmm_regs = XMMRegisterImpl::number_of_registers;
   if (UseAVX < 3) {
